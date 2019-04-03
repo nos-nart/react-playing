@@ -1,43 +1,38 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import * as actions from './../actions/index'
-import Search from './Search'
 import Task from './Task'
 
 class TaskList extends Component {
-    onSearch = (fil) => {
-        this.props.onSearch(fil)
+    onDelete = id => {
+        this.props.delete(id)
     }
-
     render() {
-        let {tasks, fil} = this.props
+        let {tasks} = this.props
         let listTask = tasks.map((task, index) => {
-            return (<tr>
+            return (
                         <Task 
                             key={index} 
+                            index={index}
                             name={task.name}
+                            id={task.id}
+                            handleDelete={this.onDelete}
                         />
-                    </tr>)
+                    )
         })
         return (
             <div className="col s12 m12 l12">
-                <table class="striped">
+                <table className="striped responsive-table">
                     <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>ID</th>
-                        <th>Todo</th>
-                    </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>ID</th>
+                            <th>Todo</th>
+                            <th>Actions</th>
+                        </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <Search onHandleSearch={this.onSearch(fil)}/>
-                            </td>
-                        </tr>
                         {listTask}
                     </tbody>
                 </table>
@@ -48,15 +43,14 @@ class TaskList extends Component {
 
 const mapStateToPtops = state => {
     return {
-        tasks: state.tasks,
-        fil: state.search
+        tasks: state.tasks
     }
 }
 
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        onSearch: fil => {
-            dispatch(actions.search(fil))
+        delete: id => {
+            dispatch(actions.remove(id))
         }
     }
 }
