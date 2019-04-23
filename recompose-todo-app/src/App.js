@@ -1,6 +1,7 @@
 import React from 'react'
 import AddTask from './components/AddTask'
-
+import Message from './components/Message'
+import './assets/style.css'
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <div className="row">
         <div className="col xl10 l10 m12 s12 offset-xl1 offset-l1">
           <AddTask />
+          <Message />
         </div>
       </div>
     </div>
