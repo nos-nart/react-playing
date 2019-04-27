@@ -1,0 +1,19 @@
+.app {
+    font-family: sans-serif;
+    text-align: center;
+    width: 50vw;
+    margin: 0 auto;
+}
+
+.app-title {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.inline-add {
+    display: flex;
+}
+
+.margin-top {
+    margin-top: 2em;
+}
