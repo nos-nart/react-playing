@@ -17,7 +17,9 @@ export default function Join() {
         <Input placeholder="Name" type="text" name="name" value={values.name} onChange={handleChange}/>
         <Input placeholder="Room" type="text" name="room" value={values.room} onChange={handleChange}/>
         <br/>
-        <Link to={`/`}>
+        <Link to={`/chat?name=${values.name}&room=${values.room}`}
+          onClick={e => (!values.name || !values.room) ? e.preventDefault() : null}
+        >
           <Button type="submit" variant="primary">join</Button>
         </Link>
       </FormContainer>
