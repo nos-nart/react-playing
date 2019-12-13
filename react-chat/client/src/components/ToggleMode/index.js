@@ -50,11 +50,11 @@ const IconModeWrapper = styled.span`
 const IconSun = styled(IconModeWrapper)`
   left: 5px;
   transform: ${({ sunRises }) =>
-    sunRises ? 'translateY(0px)' : 'translateY(100px)'};
+    sunRises ? 'translateY(2px)' : 'translateY(100px)'};
 `;
 
 const IconMoon = styled(IconModeWrapper)`
   right: 5px;
   transform: ${({ sunRises }) =>
-    sunRises ? 'translateY(-100px)' : 'translateY(0px)'};
+    sunRises ? 'translateY(-100px)' : 'translateY(2px)'};
 `;

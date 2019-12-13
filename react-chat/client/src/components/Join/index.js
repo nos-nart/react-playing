@@ -38,7 +38,7 @@ const JoinContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 20rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;

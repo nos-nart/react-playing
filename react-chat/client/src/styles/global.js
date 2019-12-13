@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import { reset } from 'styled-reset';
-import style from 'styled-theming';
 import { background, text } from './theme';
 
 export default createGlobalStyle`
