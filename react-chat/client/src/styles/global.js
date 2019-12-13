@@ -1,17 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { reset } from 'styled-reset';
 import style from 'styled-theming';
-import { light, dark } from './theme';
-
-const bgs = style('mode', {
-  light: `${light.bg}`,
-  dark: `${dark.bg}`
-})
-
-const cls = style('mode', {
-  light: `${light.text}`,
-  dark: `${dark.text}`
-})
+import { background, text } from './theme';
 
 export default createGlobalStyle`
   ${reset}
@@ -23,7 +13,7 @@ export default createGlobalStyle`
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: ${bgs};
-    color: ${cls};
+    background: ${background};
+    color: ${text};
   }
 `;

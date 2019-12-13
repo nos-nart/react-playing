@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 import { FiSun, FiMoon } from "react-icons/fi";
+import { toggleColor, toggleBackground } from '../../styles/theme';
 
 export default function ToggleMode() {
   return <ThemeConsumer>
@@ -25,16 +26,6 @@ export default function ToggleMode() {
   </ThemeConsumer>
 };
 
-const btn_bg = {
-  light: '#192039',
-  dark: '#b9c0d3'
-}
-
-const btn_cl = {
-  light: '#b9c0d3',
-  dark: '#192039'
-}
-
 const ToggleContainer = styled.button`
   position: relative;
   display: flex;
@@ -46,14 +37,14 @@ const ToggleContainer = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
-  background: ${btn_bg};
+  background: ${toggleBackground};
   overflow: hidden;
 `;
 
 const IconModeWrapper = styled.span`
   position: absolute;
   transition: all 0.5s linear;
-  color: ${btn_cl};
+  color: ${toggleColor};
 `;
 
 const IconSun = styled(IconModeWrapper)`
