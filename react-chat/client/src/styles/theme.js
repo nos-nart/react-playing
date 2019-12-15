@@ -24,3 +24,8 @@ export const formBackground = style('mode', {
   light: '#fff',
   dark: '#434e76'
 })
+
+export const borderBottom = style('mode', {
+  light: '#d9d9d9;',
+  dark: '#f5f6fa'
+})
