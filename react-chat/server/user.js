@@ -10,7 +10,8 @@ const addUser = ({ id, name , room }) => {
     }
 
     const user = { id, name, room };
-    users = [...users, user];
+    users.push(user);
+    console.log("TCL: addUser -> users", users)
 
     return { user };
 };

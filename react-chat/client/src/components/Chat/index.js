@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components';
 import queryString from 'query-string';
 import io from 'socket.io-client';
-import {useForm} from '../../hooks/use-form';
 import { formBackground, borderBottom } from '../../styles/theme';
 import Text from '../Text/index';
 import Button from '../Button/index';
+import { MdClose } from "react-icons/md";
+import ScrollToBottom from 'react-scroll-to-bottom';
+import Message from './message';
 
 let socket;
 let ENDPOINT = 'localhost:5000';
@@ -13,9 +15,8 @@ let ENDPOINT = 'localhost:5000';
 export default function Chat({location}) {
   const [states, setStates] = React.useState({ name: '', room: '' });
   const [messages, setMessages] = React.useState([]);
-  const [values, handleChange] = useForm({mssg: ''});
-  console.log("TCL: Chat -> values", values.mssg)
-  
+  const [mssg, setMssg] = React.useState('');
+
   // console.log("TCL: Chat -> states", states)
   React.useEffect(() => {
     const {name, room} = queryString.parse(location.search);
@@ -28,23 +29,45 @@ export default function Chat({location}) {
     return () => {
       socket.emit('disconnect');
       socket.off();
-    }
-  }, [ENDPOINT, location.search]);
+    };
+  }, [location.search]);
 
   React.useEffect(() => {
     socket.on('message', (mssg) => {
       setMessages([...messages, mssg]);
-    })
+    });
   }, [messages]);
+
+  const sendMessage = e => {
+    console.log('send message actions')
+    e.preventDefault();
+
+    if (mssg) {
+      socket.emit('sendMessage', mssg, () => setMssg(''))
+    }
+  };
+
+  console.log(messages)
 
   return <ChatWrapper>
     <ChatContainer>
-      <ChatRoom fw="bold" size="xl">{states.room}</ChatRoom>
-      <MessageContainer>
-
-      </MessageContainer>
+      <InfoBar>
+        <Text fw="bold" size="xl">{states.room}</Text>
+        <CloseChat>
+          <MdClose size={20}/>
+        </CloseChat>
+      </InfoBar>
+      <ScrollToBottom>
+        {messages.map((m, index) => <Message key={index} message={m} name={states.name}/>)}
+      </ScrollToBottom>
       <MssgInputContainer>
-        <ChatInput placeholder="write a message ..." name="mssg" value={values.mssg} onChange={handleChange}/>
+        <ChatInput placeholder="write a message ..."
+          name="mssg"
+          type="text"
+          value={mssg}
+          onChange={(e) => setMssg(e.target.value)}
+          onKeyPress={e => e.key === 'Enter' ? sendMessage(e) : null}
+        />
         <ChatButton variant="primary">send</ChatButton>
       </MssgInputContainer>
     </ChatContainer>
@@ -61,7 +84,7 @@ const ChatWrapper = styled.div`
 
 const ChatContainer = styled.div`
   display: grid;
-  grid-template-rows: min-content auto min-content;
+  grid-template-rows: min-content 368px min-content;
   width: 25rem;
   border-radius: 5px;
   background: ${formBackground};
@@ -70,13 +93,20 @@ const ChatContainer = styled.div`
   overflow: hidden;
 `;
 
-const ChatRoom = styled(Text)`
+const InfoBar = styled.div`
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
+  align-items: center;
   border-bottom: 1px solid ${borderBottom};
 `;
 
-const MessageContainer = styled.div`
-
+const CloseChat = styled.button`
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  color: ${borderBottom};
 `;
 
 const MssgInputContainer = styled.div`
