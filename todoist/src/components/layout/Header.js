@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const Header = () => {
-    return <>header</>
+    return <header data-testid="header">header</header>
 }
