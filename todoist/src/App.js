@@ -2,22 +2,24 @@ import React from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import { day, night } from './styles/theme';
 import { Global, css } from "@emotion/core";
-import emotionNormalize from 'emotion-normalize';
+import emotionReset from 'emotion-reset';
+import {Header} from './components/layout/Header/index';
+import { useMode } from './hooks/use-theme';
 
 export const App = () => {
-
+  const { mode } = useMode();
+  const theme = Object.is(mode, 'day') ? day : night;
   return (
-    <ThemeProvider theme={night}>
+    <ThemeProvider theme={theme}>
       <Global
         styles={theme =>
           css`
             @import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Inconsolata&display=swap');
-            ${emotionNormalize}
+            ${emotionReset}
             html,
             body {
-              padding: 0;
-              margin: 0;
-              background: ${theme.bg};
+              box-sizing: border-box;
+              background: ${theme.page_bg};
               color: ${theme.text};
               -webkit-font-smoothing: antialiased;
               -moz-osx-font-smoothing: grayscale;
@@ -25,7 +27,7 @@ export const App = () => {
             }
           `}
       />
-      <p>Hello world</p>
+      <Header />
     </ThemeProvider>
   );
 }

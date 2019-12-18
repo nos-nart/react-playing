@@ -1,23 +1,32 @@
+import facepaint from 'facepaint';
+
 export const day = {
-    text: '#1a202c',
-    textMuted: '#99a0ac',
-    toggleBorder: '#FFF',
-    iconColor: '#f5f5f6',
-    bg: '#f9f9fa',
-    primary: '#28a745',
-    secondary: '#448bff',
-    linkHoverBgColor: '#ffca28',
-    linkHoverColor: '#448bff'
+  text: '#333',
+  text_muted: '#808080',
+  page_bg: '#fff',
+  content_bg: '#f7f7f7',
+  toggle_bg: 'linear-gradient(to right, #f09819, #edde5d)',
+  blue: '#5297ff',
+  green: '#25b84c',
+  violet: '#a970ff',
+  orange: '#de4c4a',
+  hover_color: '#ffffff33'
 };
 
 export const night = {
-    text: '#b9c0d3',
-    textMuted: '#99a0ac',
-    toggleBorder: '#29323c',
-    iconColor: '#192039',
-    bg: '#192039',
-    primary: '#28a745',
-    secondary: '#448bff',
-    linkHoverBgColor: '#27293d',
-    linkHoverColor: '#28a745'
+  text: '#ffffffde',
+  page_bg: '#282828',
+  content_bg: '#1f1f1f',
+  toggle_bg: 'linear-gradient(to right, #56ccf2, #2f80ed)',
+  blue: '#5297ff',
+  green: '#25b84c',
+  violet: '#a970ff',
+  orange: '#de4c4a',
+  hover_color: '#ffffff33'
 };
+
+export const mq = facepaint([
+  '@media(min-width: 420px)',
+  '@media(min-width: 920px)',
+  '@media(min-width: 1120px)'
+]);
