@@ -30,7 +30,7 @@ export const ToggleMode = () => {
         position: 'absolute',
         transition: 'all 0.5s linear',
         left: '5px',
-        transform: isDay ? 'translateY(2px)' : 'translateY(100px)',
+        transform: isDay ? 'translateY(1px)' : 'translateY(100px)',
         color: '#fff'
       }}
     >
@@ -41,7 +41,7 @@ export const ToggleMode = () => {
         position: 'absolute',
         transition: 'all 0.5s linear',
         right: '5px',
-        transform: isDay ? 'translateY(-100px)' : 'translateY(2px)',
+        transform: isDay ? 'translateY(-100px)' : 'translateY(1px)',
         color: '#fff'
       }}
     >

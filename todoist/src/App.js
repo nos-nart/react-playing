@@ -3,7 +3,7 @@ import { ThemeProvider } from 'emotion-theming';
 import { day, night } from './styles/theme';
 import { Global, css } from "@emotion/core";
 import emotionReset from 'emotion-reset';
-import {Header} from './components/layout/Header/index';
+import {AppLayout} from './components/layout/index';
 import { useMode } from './hooks/use-theme';
 
 export const App = () => {
@@ -27,7 +27,9 @@ export const App = () => {
             }
           `}
       />
-      <Header />
+      <AppLayout>
+        <p>hello world</p>
+      </AppLayout>
     </ThemeProvider>
   );
 }
