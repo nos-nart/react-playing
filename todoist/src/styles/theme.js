@@ -1,35 +1,42 @@
 import facepaint from 'facepaint';
 
+// blue: '#5297ff',
+// green: '#25b84c',
+// violet: '#a970ff',
+// orange: '#de4c4a',
+
 export const day = {
   text: '#333',
   text_muted: '#808080',
-  header_border: '',
-  page_bg: '#fff',
-  content_bg: '#f7f7f7',
+  page_bg: '#f7f7f7',
+  content_bg: '#fff',
   content_border: '1px solid #f1f1f1',
   toggle_bg: 'linear-gradient(to right, #f09819, #edde5d)',
+  link_border: '2px solid #5297ff',
   btn_bg: '#dddddd',
-  blue: '#5297ff',
-  green: '#25b84c',
-  violet: '#a970ff',
-  orange: '#de4c4a',
-  hover_color: '#ffffff33'
+  hover_color: '#ffffff33',
+  svg_clr_1: '#da4c3f',
+  svg_clr_2: '#e57f78',
+  svg_clr_3: '#eca19a',
+  svg_clr_4: '#f9e4e2',
+  svg_clr_5: '#fff'
 };
 
 export const night = {
   text: '#ffffffde',
   text_muted: '#808080',
-  header_border: '',
   page_bg: '#282828',
   content_bg: '#1f1f1f',
   content_border: '1px solid #1f1f1f',
   toggle_bg: 'linear-gradient(to right, #56ccf2, #2f80ed)',
+  link_border: '2px solid #25b84c',
   btn_bg: '#535353',
-  blue: '#5297ff',
-  green: '#25b84c',
-  violet: '#a970ff',
-  orange: '#de4c4a',
-  hover_color: '#ffffff33'
+  hover_color: '#ffffff33',
+  svg_clr_1: '#ffffff',
+  svg_clr_2: '#bcbcbc',
+  svg_clr_3: '#797979',
+  svg_clr_4: '#404040',
+  svg_clr_5: 'none'
 };
 
 export const mq = facepaint([

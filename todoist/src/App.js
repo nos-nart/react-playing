@@ -5,6 +5,8 @@ import { Global, css } from "@emotion/core";
 import emotionReset from 'emotion-reset';
 import {AppLayout} from './components/layout/index';
 import { useMode } from './hooks/use-theme';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './routes/Home';
 
 export const App = () => {
   const { mode } = useMode();
@@ -27,9 +29,13 @@ export const App = () => {
             }
           `}
       />
-      <AppLayout>
-        <p>hello world</p>
-      </AppLayout>
+      <Router>
+        <AppLayout>
+          <Switch>
+            <Route exact path="/" component={Home} />
+          </Switch>
+        </AppLayout>
+      </Router>
     </ThemeProvider>
   );
 }

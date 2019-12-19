@@ -3,16 +3,19 @@ import { Link } from 'react-router-dom';
 /** @jsx jsx */ import { jsx, css } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
-export const SidebarLink = ({active}) => {
+export const SidebarLink = (props) => {
+  console.log("TCL: SidebarLink -> props", props)
   const theme = useTheme();
-
-  return <Link css={{
-    padding: '1rem 2rem',
+  
+  return <Link {...props} css={{
+    padding: '10px 16px 10px 5px',
     color: theme.text,
     textDecoration: 'none',
     display: 'flex',
     alignItems: 'center',
-    transition: 'all 0.2s cubic-bezier(0.19, 1, 0.22, 1)',
-
+    transition: 'all 0.2s linear',
+    borderRight: props.active === 'active' ? theme.link_border : '',
+    fontWeight: props.active === 'active' ? '600' : '300',
+    background: props.active === 'active' ? theme.content_bg : ''
   }}/>
 };

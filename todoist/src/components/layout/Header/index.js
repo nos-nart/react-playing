@@ -5,6 +5,7 @@ import { useTheme } from 'emotion-theming';
 import { mq } from '../../../styles/theme';
 import {ToggleMode} from './toggle-mode';
 import { FiPlus, FiMenu } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const theme = useTheme();
@@ -19,7 +20,8 @@ export const Header = () => {
   }));
 
   const logo = css(mq({
-    display: ['none', 'none', 'block', 'block']
+    display: ['none', 'none', 'block', 'block'],
+    color: theme.text
   }));
 
   const menu__icon = css(mq({
@@ -41,7 +43,9 @@ export const Header = () => {
         display: 'flex',
         alignItems: 'center'
       }}>
-        <Logo css={logo}/>
+        <Link exact='true' to="/">
+          <Logo css={logo}/>
+        </Link>
         <FiMenu size={23} css={menu__icon}/>
       </div>
       <div css={{

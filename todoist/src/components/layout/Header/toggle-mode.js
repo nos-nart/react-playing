@@ -28,7 +28,7 @@ export const ToggleMode = () => {
     <span
       css={{
         position: 'absolute',
-        transition: 'all 0.5s linear',
+        transition: 'all 0.4s linear',
         left: '5px',
         transform: isDay ? 'translateY(1px)' : 'translateY(100px)',
         color: '#fff'
@@ -39,7 +39,7 @@ export const ToggleMode = () => {
     <span
       css={{
         position: 'absolute',
-        transition: 'all 0.5s linear',
+        transition: 'all 0.4s linear',
         right: '5px',
         transform: isDay ? 'translateY(-100px)' : 'translateY(1px)',
         color: '#fff'
