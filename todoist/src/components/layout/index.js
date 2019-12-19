@@ -21,9 +21,18 @@ export const AppLayout = ({ children }) => {
       <div css={{
         marginLeft: '266px',
         minHeight: '100vh',
-        background: theme.content_bg
+        background: theme.content_bg,
+        borderRight: theme.content_border
       }}>
-        { children }
+        <div css={{
+          verticalAlign: 'top',
+          paddingLeft: '44px',
+          paddingRight: '14px',
+          paddingTop: '80px',
+          paddingBottom: '84px'
+        }}>
+          { children }
+        </div>
       </div>
     </div>
   </>

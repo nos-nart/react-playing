@@ -26,48 +26,49 @@ export const Header = () => {
     display: ['block', 'block', 'none', 'none']
   }));
 
-  return <header data-testid="header">
-    <div css={{
-      height: '44px',
-      width: '100vw',
-      boxShadow: '0 1px 2px #00000026',
-      display: 'flex',
-      alignItems: 'center'
-    }}>
-      <nav css={nav}>
-        <div css={{
+  return <header data-testid="header" css={{
+    height: '44px',
+    width: '100vw',
+    boxShadow: '0 1px 2px #00000026',
+    display: 'flex',
+    alignItems: 'center',
+    position: 'fixed',
+    background: theme.page_bg,
+    zIndex: 999
+  }}>
+    <nav css={nav}>
+      <div css={{
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        <Logo css={logo}/>
+        <FiMenu size={23} css={menu__icon}/>
+      </div>
+      <div css={{
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        <button css={{
+          outline: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          marginRight: '1rem',
+          padding: '3px 4px',
+          borderRadius: '3px',
+          transition: 'all 0.3s ease-in',
+          background: 'transparent',
           display: 'flex',
-          alignItems: 'center'
+          justifyContent: 'center',
+          alignItems: 'center',
+          ':hover': {background: theme.btn_bg}
         }}>
-          <Logo css={logo}/>
-          <FiMenu size={23} css={menu__icon}/>
-        </div>
-        <div css={{
-          display: 'flex',
-          alignItems: 'center'
-        }}>
-          <button css={{
-            outline: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            marginRight: '1rem',
-            padding: '3px 4px',
-            borderRadius: '3px',
-            transition: 'all 0.3s ease-in',
-            background: 'transparent',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            ':hover': {background: theme.btn_bg}
-          }}>
-            <FiPlus size={23} css={{
-              color: theme.text
-            }}/>
-          </button>
-          <ToggleMode/>
-        </div>
-      </nav>
-    </div>
+          <FiPlus size={23} css={{
+            color: theme.text
+          }}/>
+        </button>
+        <ToggleMode/>
+      </div>
+    </nav>
   </header>
 };
 

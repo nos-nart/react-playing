@@ -2,7 +2,7 @@ import React from 'react';
 
 const CalendarIcon = props => (
   <svg width={24} height={24} {...props}>
-    <g fill="currentColor" fillRule="nonzero">
+    <g fill="#a970ff" fillRule="nonzero">
       <path
         d="M6 4.5h12A1.5 1.5 0 0119.5 6v2.5h-15V6A1.5 1.5 0 016 4.5z"
         opacity={0.1}
