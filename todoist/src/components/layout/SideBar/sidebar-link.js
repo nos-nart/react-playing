@@ -6,7 +6,7 @@ import { useTheme } from 'emotion-theming';
 export const SidebarLink = (props) => {
   console.log("TCL: SidebarLink -> props", props)
   const theme = useTheme();
-  
+
   return <Link {...props} css={{
     padding: '10px 16px 10px 5px',
     color: theme.text,

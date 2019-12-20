@@ -206,7 +206,7 @@ const Home = () => {
       lineHeight: '1.5rem',
       fontSize: '0.875rem'
     }}>
-      Todoist clone is built using React(Hooks, Context), Firebase & React Testing library
+      Todoist clone is built using React(Hooks, Context)<br/>Firebase & React Testing library.
     </p>
   </div>
 }
