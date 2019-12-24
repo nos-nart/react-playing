@@ -6,7 +6,8 @@ import emotionReset from 'emotion-reset';
 import {AppLayout} from './components/layout/index';
 import { useMode } from './hooks/use-theme';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './routes/Home';
+import history from './helpers/history';
+import { routes } from './routes/index';
 
 export const App = () => {
   const { mode } = useMode();
@@ -29,10 +30,10 @@ export const App = () => {
             }
           `}
       />
-      <Router>
+      <Router history={history}>
         <AppLayout>
           <Switch>
-            <Route exact path="/" component={Home} />
+            { routes.length && routes.map((r, index) => <Route key={index} component={r.main} path={r.path} exact={r.exact}/>)}
           </Switch>
         </AppLayout>
       </Router>
