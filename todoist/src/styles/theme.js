@@ -14,12 +14,7 @@ export const day = {
   toggle_bg: 'linear-gradient(to right, #f09819, #edde5d)',
   link_border: '2px solid #5297ff',
   btn_bg: '#dddddd',
-  hover_color: '#ffffff33',
-  svg_clr_1: '#da4c3f',
-  svg_clr_2: '#e57f78',
-  svg_clr_3: '#eca19a',
-  svg_clr_4: '#f9e4e2',
-  svg_clr_5: '#fff'
+  hover_color: '#ffffff33'
 };
 
 export const night = {
@@ -31,12 +26,7 @@ export const night = {
   toggle_bg: 'linear-gradient(to right, #56ccf2, #2f80ed)',
   link_border: '2px solid #25b84c',
   btn_bg: '#535353',
-  hover_color: '#ffffff33',
-  svg_clr_1: '#ffffff',
-  svg_clr_2: '#bcbcbc',
-  svg_clr_3: '#797979',
-  svg_clr_4: '#404040',
-  svg_clr_5: 'none'
+  hover_color: '#ffffff33'
 };
 
 export const mq = facepaint([
