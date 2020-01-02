@@ -364,7 +364,7 @@ module.exports = function(webpackEnv) {
                 }
               },
               {
-                loader: 'url-loader'
+                loader: 'file-loader'
               }]
             },
             // Process application JS with Babel.

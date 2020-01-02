@@ -1,7 +1,7 @@
 import React from 'react';
 /** @jsx jsx */ import { jsx, css } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
-import { ReactComponent as TodoList } from '../assets/images/todolist.svg';
+// import { ReactComponent as TodoList } from '../assets/images/todolist.svg';
 
 const Home = () => {
   const theme = useTheme();
@@ -13,7 +13,7 @@ const Home = () => {
     flexDirection: 'column',
     height: '70vh'
   }}>
-    <TodoList />
+    home
     <p css={{
       textAlign: 'center',
       margin: '2rem',

@@ -26,7 +26,7 @@ const menus = [
     label: 'Next 7 days',
     icon: <CalendarIcon/>
   }
-]
+];
 
 const CustomMenuLink = ({ to, activeOnlyWhenExact, label, icon }) => {
   return <Route
@@ -46,8 +46,7 @@ const showMenus = menus => {
   return menus.map((m, index) => {
     return <CustomMenuLink key={index} to={m.to} activeOnlyWhenExact={m.exact} label={m.label} icon={m.icon}/>
   })
-}
-
+};
 
 export const SideBar = () => {
   const theme = useTheme();
