@@ -365,7 +365,8 @@ module.exports = function(webpackEnv) {
               },
               {
                 loader: 'file-loader'
-              }]
+              }
+            ]
             },
             // Process application JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
