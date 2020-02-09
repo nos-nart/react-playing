@@ -14,7 +14,8 @@ export const day = {
   toggle_bg: 'linear-gradient(to right, #f09819, #edde5d)',
   link_border: '2px solid #5297ff',
   btn_bg: '#dddddd',
-  hover_color: '#ffffff33'
+  hover_color: '#ffffff33',
+  project_border: '#d5d5d5'
 };
 
 export const night = {
@@ -26,7 +27,8 @@ export const night = {
   toggle_bg: 'linear-gradient(to right, #56ccf2, #2f80ed)',
   link_border: '2px solid #25b84c',
   btn_bg: '#535353',
-  hover_color: '#ffffff33'
+  hover_color: '#ffffff33',
+  project_border: '#3e3e3e'
 };
 
 export const mq = facepaint([

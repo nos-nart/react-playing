@@ -8,6 +8,7 @@ import { useMode } from './hooks/use-theme';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import history from './helpers/history';
 import { routes } from './routes/index';
+import { SelectedProjectProvider, ProjectsProvider } from './context/index';
 
 export const App = () => {
   const { mode } = useMode();
@@ -32,9 +33,23 @@ export const App = () => {
       />
       <Router history={history}>
         <AppLayout>
-          <Switch>
-            { routes.length && routes.map((r, index) => <Route key={index} component={r.main} path={r.path} exact={r.exact}/>)}
-          </Switch>
+          {/* <SelectedProjectProvider>
+            <ProjectsProvider>
+            </ProjectsProvider>
+          </SelectedProjectProvider> */}
+              <Switch>
+                { 
+                  routes.length &&
+                  routes.map((r, index) =>
+                    <Route 
+                      key={index}
+                      component={r.main}
+                      path={r.path}
+                      exact={r.exact}
+                    />
+                  )
+                }
+              </Switch>
         </AppLayout>
       </Router>
     </ThemeProvider>

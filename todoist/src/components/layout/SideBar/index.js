@@ -6,6 +6,7 @@ import InboxIcon from './ibox-icon';
 import CalendarIcon from './calendar-icon';
 import { Route } from 'react-router-dom';
 import { SidebarLink } from './sidebar-link';
+import { FiPlus, FiChevronRight } from "react-icons/fi";
 
 const menus = [
   {
@@ -53,6 +54,8 @@ export const SideBar = () => {
 
   return <div data-testid="sidebar"
     css={{
+      display: 'flex',
+      flexDirection: 'column',
       height: `calc(100vh - 50px)`,
       position: 'fixed',
       width: '266px',
@@ -61,5 +64,36 @@ export const SideBar = () => {
       borderRight: theme.content_border
     }}>
       {showMenus(menus)}
+      <div css={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '10px 16px 10px 5px',
+        cursor: 'pointer',
+        borderBottom: `1px solid ${theme.project_border}`
+      }}>
+        <div css={{
+          display: 'flex',
+          alignItems: 'center'
+        }}>
+          <FiChevronRight size={20}/>
+          <span css={{ marginLeft: '5px' }}>Projects</span>
+        </div>
+        <button css={{
+          border: 'none',
+          outline: 'none',
+          borderRadius: '3px',
+          background: 'none',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: theme.text,
+          padding: '3px',
+          cursor: 'pointer'
+        }}>
+          <FiPlus size={20}/>
+        </button>
+      </div>
   </div>
 };
