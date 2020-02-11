@@ -32,7 +32,7 @@ const Today = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          borderBottom: '1px solid #e2e8f0',
+          borderBottom: '1px solid #90cdf4',
           padding: '0.5rem 0',
         }}>
           <div>
