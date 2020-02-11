@@ -12,7 +12,7 @@ export const day = {
   content_bg: '#fff',
   content_border: '1px solid #f1f1f1',
   toggle_bg: 'linear-gradient(to right, #f09819, #edde5d)',
-  link_border: '2px solid #5297ff',
+  link_border: '2px solid #096dd9',
   btn_bg: '#dddddd',
   hover_color: '#ffffff33',
   project_border: '#d5d5d5'
