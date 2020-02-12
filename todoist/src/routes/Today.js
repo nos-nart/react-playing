@@ -32,8 +32,8 @@ const Today = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          borderBottom: '1px solid #90cdf4',
-          padding: '0.5rem 0',
+          borderBottom: `1px solid ${theme.project_border}`,
+          padding: '0.3rem 0',
         }}>
           <div>
             <input type="checkbox"/>
@@ -46,7 +46,7 @@ const Today = () => {
             color: theme.text,
             cursor: 'pointer'
           }}>
-            <FiEdit size={20} stroke="currentColor"/>
+            <FiEdit size={16} stroke="currentColor"/>
           </button>
         </li>
       </ul>
