@@ -1,16 +1,16 @@
 import React from 'react';
-import myFirebase from './firebase';
+import {firebase} from './firebase';
 /** @jsx jsx */ import { jsx, css } from '@emotion/core';
 
 const useVocabs = () => {
     const [vocabs, setVocabs] = React.useState([]);
 
     React.useEffect(() => {
-        myFirebase
+        firebase
             .firestore()
             .collection('vocabs')
             .onSnapshot((snapshot) => {
-                debugger
+                console.log('hey')
             })
 
     })

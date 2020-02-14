@@ -5,7 +5,7 @@ import ListWords from './ListWords';
 function App() {
   return (
     <div css={{
-      maxWidth: '30vw',
+      maxWidth: '30rem',
       margin: '1rem auto',
       display: 'flex',
       flexDirection: 'column',
