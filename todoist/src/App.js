@@ -37,19 +37,19 @@ export const App = () => {
             <ProjectsProvider>
             </ProjectsProvider>
           </SelectedProjectProvider> */}
-              <Switch>
-                { 
-                  routes.length &&
-                  routes.map((r, index) =>
-                    <Route 
-                      key={index}
-                      component={r.main}
-                      path={r.path}
-                      exact={r.exact}
-                    />
-                  )
-                }
-              </Switch>
+          <Switch>
+            { 
+              routes.length &&
+              routes.map((r, index) =>
+                <Route 
+                  key={index}
+                  component={r.main}
+                  path={r.path}
+                  exact={r.exact}
+                />
+              )
+            }
+          </Switch>
         </AppLayout>
       </Router>
     </ThemeProvider>

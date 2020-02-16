@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useTheme } from 'emotion-theming';
 
 export const SidebarLink = (props) => {
-  console.log("TCL: SidebarLink -> props", props)
   const theme = useTheme();
 
   return <Link {...props} css={{

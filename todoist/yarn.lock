@@ -9123,6 +9123,11 @@ react-error-overlay@^6.0.4:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.4.tgz#0d165d6d27488e660bc08e57bdabaad741366f7a"
   integrity sha512-ueZzLmHltszTshDMwyfELDq8zOA803wQ1ZuzCccXa1m57k1PxSHfflPD5W9YIiTXLs0JTLzoj6o1LuM5N6zzNA==
 
+react-hook-form@^4.9.4:
+  version "4.9.4"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-4.9.4.tgz#98ed4d9de9751243055e1486257baf2be4a3bdd1"
+  integrity sha512-n91LJ42h/IgDMZqbMwJvLUOd1GjjK66f+IHs9FuRreMhk91Kqss+JCCe8QfFPxGSmRAlAskyX1Spa6/tkQ/UgA==
+
 react-icons@^3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.8.0.tgz#229de5904809696c9f46932bd9b6126b2522866e"

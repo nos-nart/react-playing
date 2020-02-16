@@ -4,6 +4,14 @@ import facepaint from 'facepaint';
 // green: '#25b84c',
 // violet: '#a970ff',
 // orange: '#de4c4a',
+const commonStyle = {
+  fontXxs: '0.5rem',
+  fontXs: '0.75rem',
+  fontSm: '0.875rem',
+  fontLg: '1.125rem',
+  fontXl: '1.25rem',
+  font2Xl: '1.5rem'
+}
 
 export const day = {
   text: '#333',
@@ -15,7 +23,8 @@ export const day = {
   link_border: '2px solid #096dd9',
   btn_bg: '#dddddd',
   hover_color: '#ffffff33',
-  project_border: '#d5d5d5'
+  project_border: '#d5d5d5',
+  ...commonStyle
 };
 
 export const night = {
@@ -28,7 +37,8 @@ export const night = {
   link_border: '2px solid #25b84c',
   btn_bg: '#535353',
   hover_color: '#ffffff33',
-  project_border: '#3e3e3e'
+  project_border: '#3e3e3e',
+  ...commonStyle
 };
 
 export const mq = facepaint([

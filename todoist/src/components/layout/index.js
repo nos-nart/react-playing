@@ -4,6 +4,7 @@ import { Header } from './Header/index';
 import { SideBar } from './SideBar';
 import { mq } from '../../styles/theme';
 import { useTheme } from 'emotion-theming';
+import { TodayProvider } from '../../hooks/use-today';
 
 export const AppLayout = ({ children }) => {
   const theme = useTheme();
@@ -18,22 +19,24 @@ export const AppLayout = ({ children }) => {
     <Header />
     <div css={content}>
       <SideBar />
-      <div css={{
-        marginLeft: '266px',
-        minHeight: '100vh',
-        background: theme.content_bg,
-        borderRight: theme.content_border
-      }}>
+      <TodayProvider>
         <div css={{
-          verticalAlign: 'top',
-          paddingLeft: '44px',
-          paddingRight: '14px',
-          paddingTop: '80px',
-          paddingBottom: '84px'
+          marginLeft: '266px',
+          minHeight: '100vh',
+          background: theme.content_bg,
+          borderRight: theme.content_border
         }}>
-          { children }
+          <div css={{
+            verticalAlign: 'top',
+            paddingLeft: '44px',
+            paddingRight: '14px',
+            paddingTop: '80px',
+            paddingBottom: '84px'
+          }}>
+            { children }
+          </div>
         </div>
-      </div>
+      </TodayProvider>
     </div>
   </>
 };
