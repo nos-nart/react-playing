@@ -1,5 +1,5 @@
 import React from 'react';
-/** @jsx jsx */ import { jsx, css } from '@emotion/core';
+/** @jsx jsx */ import { jsx } from '@emotion/core';
 import { createPortal } from 'react-dom';
 import { useTheme } from 'emotion-theming';
 import usePortal from '../hooks/use-portal';

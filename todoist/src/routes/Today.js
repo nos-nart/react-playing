@@ -3,15 +3,16 @@ import React, { useState } from 'react';
 import { useTheme } from 'emotion-theming';
 import dayjs from 'dayjs';
 import { IoMdAddCircle } from "react-icons/io";
-import { FiEdit, FiInbox } from "react-icons/fi";
+import { FiInbox } from "react-icons/fi";
+import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import { useToday } from "../hooks/use-today";
 import Loader from '../components/loader';
 import AddToday from '../components/add-today';
 
 const Today = () => {
   const theme = useTheme();
-  const { today, loading } = useToday();
-  const [isAdding, setIsAdding] = useState(true);
+  const { today, loading, isAdding, toggleAdd } = useToday();
+  console.log("TCL: today", today)
 
   return <div css={css`
     display: flex;
@@ -55,14 +56,11 @@ const Today = () => {
               padding: 0.8rem 0;
               transition: all 0.1s linear;
               cursor: pointer;
-              &:hover {
-                background: ${theme.project_border}
-              }
           `}>
             <div css={css`
               flex: 1 1 0%
             `}>
-              <input type="checkbox"/>
+              <input type="checkbox" defaultChecked={item.isDone}/>
               <span css={css`
                 margin-left: 10px;
                 text-decoration: ${item.isDone ? 'line-through' : 'none'}
@@ -73,14 +71,28 @@ const Today = () => {
               width: 10%
             `}>{item.timeSpend} mins</span>
             <button css={css`
-              width: 10%;
+              padding: 0 1rem;
+              outline: none;
+              border: none;
+              background: transparent;
+              color: ${theme.text};
+              cursor: pointer;
+              transition: all 0.2s linear;
+              &:hover {
+                color: ${theme.red}
+              }
+            `}>
+              <AiOutlineDelete size={20} stroke="currentColor"/>
+            </button>
+            <button css={css`
+              padding: 0 1rem;
               outline: none;
               border: none;
               background: transparent;
               color: ${theme.text};
               cursor: pointer;
             `}>
-              <FiEdit size={16} stroke="currentColor"/>
+              <AiOutlineEdit size={20} stroke="currentColor"/>
             </button>
           </li>)}
         </ul>
@@ -89,7 +101,9 @@ const Today = () => {
         padding: 1rem 0;
       `}>
         {
-          !isAdding ? <button css={css`
+          !isAdding ? <button 
+          onClick={() => toggleAdd()}
+          css={css`
             outline: none;
             border: none;
             padding: 0;

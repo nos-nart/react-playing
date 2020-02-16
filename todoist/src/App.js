@@ -29,6 +29,10 @@ export const App = () => {
               -moz-osx-font-smoothing: grayscale;
               font-family: 'Inconsolata', monospace;
             }
+            ::-webkit-input-placeholder {
+              letter-spacing: 1px;
+              font-family: 'Inconsolata', monospace;
+            }
           `}
       />
       <Router history={history}>

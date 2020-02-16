@@ -6,6 +6,9 @@ export const TodayContext = createContext({});
 export const TodayProvider = ({ children }) => {
   const [today, setToday] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isAdding, setIsAdding] = useState(false);
+
+  const toggleAdd = () => setIsAdding(!isAdding);
 
   useEffect(() => {
     firebase
@@ -22,6 +25,7 @@ export const TodayProvider = ({ children }) => {
   }, [])
 
   const add = (isDone, name, isEditing, timeSpend, at) => {
+    console.log("TCL: add -> name", name)
     return firebase
       .firestore()
       .collection('today')
@@ -34,7 +38,17 @@ export const TodayProvider = ({ children }) => {
       })
   }
 
-  return <TodayContext.Provider value={{ today, loading, add }}>
+  const remove = () => {
+    
+  }
+
+  return <TodayContext.Provider value={{ 
+    today,
+    isAdding,
+    toggleAdd,
+    loading,
+    add
+  }}>
     { children }
   </TodayContext.Provider>
 }

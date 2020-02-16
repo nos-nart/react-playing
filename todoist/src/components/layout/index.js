@@ -29,7 +29,7 @@ export const AppLayout = ({ children }) => {
           <div css={{
             verticalAlign: 'top',
             paddingLeft: '44px',
-            paddingRight: '14px',
+            paddingRight: '20px',
             paddingTop: '80px',
             paddingBottom: '84px'
           }}>
