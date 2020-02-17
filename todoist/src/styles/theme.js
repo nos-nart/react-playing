@@ -1,9 +1,5 @@
 import facepaint from 'facepaint';
 
-// blue: '#1890ff',
-// green: '#25b84c',
-// violet: '#a970ff',
-// orange: '#de4c4a',
 const commonStyle = {
   fontXxs: '0.5rem',
   fontXs: '0.75rem',
@@ -16,6 +12,9 @@ const commonStyle = {
   fwExtraBold: '800',
   green: '#25b84c',
   red: '#f5222d',
+  purple: '#722ed1',
+  yellow: '#fadb14',
+  orange: '#FF7200'
 }
 
 export const day = {

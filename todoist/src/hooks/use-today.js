@@ -11,7 +11,7 @@ export const TodayProvider = ({ children }) => {
   const toggleAdd = () => setIsAdding(!isAdding);
 
   useEffect(() => {
-    firebase
+    const unsubscribe =  firebase
       .firestore()
       .collection('today')
       .onSnapshot((snapshot) => {
@@ -22,19 +22,20 @@ export const TodayProvider = ({ children }) => {
         setToday(temp);
         setLoading(false)
       })
+    return () => unsubscribe()
   }, [])
 
-  const add = (isDone, name, isEditing, timeSpend, at) => {
+  const add = (name, timeSpend, at, isDone, isEditing) => {
     console.log("TCL: add -> name", name)
     return firebase
       .firestore()
       .collection('today')
       .add({
-        isDone,
         name,
-        isEditing,
         timeSpend,
-        at
+        at,
+        isDone,
+        isEditing
       })
   }
 

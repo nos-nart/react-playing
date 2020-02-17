@@ -47,7 +47,7 @@ const Today = () => {
             justify-content: center;
             padding: 2rem 0;
           `}><FiInbox size={24}/></div> :
-            today.map(item => <li key={item.id} css={css`
+            today.map(item => <li key={item.id} id={item.id} css={css`
               display: flex;
               align-items: center;
               justify-content: space-between;
@@ -71,7 +71,6 @@ const Today = () => {
               width: 10%
             `}>{item.timeSpend} mins</span>
             <button css={css`
-              padding: 0 1rem;
               outline: none;
               border: none;
               background: transparent;
@@ -85,12 +84,14 @@ const Today = () => {
               <AiOutlineDelete size={20} stroke="currentColor"/>
             </button>
             <button css={css`
-              padding: 0 1rem;
               outline: none;
               border: none;
               background: transparent;
               color: ${theme.text};
               cursor: pointer;
+              &:hover {
+                color: ${theme.orange}
+              }
             `}>
               <AiOutlineEdit size={20} stroke="currentColor"/>
             </button>
