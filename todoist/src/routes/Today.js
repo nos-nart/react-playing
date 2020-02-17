@@ -12,7 +12,7 @@ import AddToday from '../components/add-today';
 const Today = () => {
   const theme = useTheme();
   const { today, loading, isAdding, toggleAdd } = useToday();
-  
+
   return <div css={css`
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@ const Today = () => {
             justify-content: center;
             padding: 2rem 0;
           `}><FiInbox size={24}/></div> :
-            today.map(item => <li key={item.id} id={item.id} css={css`
+            today.map(item => <li key={item.id} data-id={item.id} css={css`
               display: flex;
               align-items: center;
               justify-content: space-between;

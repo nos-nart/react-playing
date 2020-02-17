@@ -22,7 +22,7 @@ export const TodayProvider = ({ children }) => {
         setToday(temp);
         setLoading(false)
       })
-    return () => unsubscribe()
+    return () => unsubscribe();
   }, [])
 
   const add = (name, timeSpend, at, isDone, isEditing) => {
@@ -36,13 +36,15 @@ export const TodayProvider = ({ children }) => {
         at,
         isDone,
         isEditing
-      })
+      });
   }
 
   const remove = (id) => {
     return firebase
       .firestore()
-      .doc(`/today/${id}`)
+      .collection('today')
+      .doc(`${id}`)
+      .delete();
   }
 
   return <TodayContext.Provider value={{ 
