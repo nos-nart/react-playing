@@ -12,8 +12,7 @@ import AddToday from '../components/add-today';
 const Today = () => {
   const theme = useTheme();
   const { today, loading, isAdding, toggleAdd } = useToday();
-  console.log("TCL: today", today)
-
+  
   return <div css={css`
     display: flex;
     flex-direction: column;
@@ -40,7 +39,10 @@ const Today = () => {
         </div> : <ul css={css`
           display: flex;
           flex-direction: column;
-          margin-top: 1rem
+          margin-top: 1rem;
+          li:not(:last-child) {
+            border-bottom: 1px solid ${theme.project_border};
+          }
         `}>
           { today.length < 0 ? <div css={css`
             display: flex;
@@ -51,7 +53,6 @@ const Today = () => {
               display: flex;
               align-items: center;
               justify-content: space-between;
-              border-bottom: 1px solid ${theme.project_border};
               margin: 0.2rem 0;
               padding: 0.8rem 0;
               transition: all 0.1s linear;

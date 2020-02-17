@@ -39,8 +39,10 @@ export const TodayProvider = ({ children }) => {
       })
   }
 
-  const remove = () => {
-    
+  const remove = (id) => {
+    return firebase
+      .firestore()
+      .doc(`/today/${id}`)
   }
 
   return <TodayContext.Provider value={{ 
@@ -48,7 +50,8 @@ export const TodayProvider = ({ children }) => {
     isAdding,
     toggleAdd,
     loading,
-    add
+    add,
+    remove
   }}>
     { children }
   </TodayContext.Provider>

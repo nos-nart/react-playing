@@ -5,10 +5,10 @@ import { Global, css } from "@emotion/core";
 import emotionReset from 'emotion-reset';
 import {AppLayout} from './components/layout/index';
 import { useMode } from './hooks/use-theme';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 import history from './helpers/history';
 import { routes } from './routes/index';
-import { SelectedProjectProvider, ProjectsProvider } from './context/index';
+// import { SelectedProjectProvider, ProjectsProvider } from './context/index';
 
 export const App = () => {
   const { mode } = useMode();

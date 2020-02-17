@@ -20,6 +20,7 @@ function AddToday() {
   const { handleSubmit, register, errors } = useForm();
 
   const onSubmit = data => {
+    console.log(errors);
     add(data.name, data.time, data.at, false, false)
       .then(ref => {
         console.log(ref)

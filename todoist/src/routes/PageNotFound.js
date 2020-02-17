@@ -50,7 +50,7 @@ export default function PageNotFound() {
             fontFamily: 'Inconsolata',
             background: '#28b561',
             color: '#fff'
-          }}>take me 🏠</button>
+          }}>take me <span role="img" aria-label="house">🏠</span></button>
         </Link>
       </div>
     </div>
