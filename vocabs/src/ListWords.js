@@ -10,7 +10,7 @@ const useVocabs = () => {
             .firestore()
             .collection('vocabs')
             .onSnapshot((snapshot) => {
-                console.log('hey')
+                debugger
             })
 
     })
