@@ -11,7 +11,14 @@ import AddToday from '../components/add-today';
 
 const Today = () => {
   const theme = useTheme();
-  const { today, loading, isAdding, toggleAdd } = useToday();
+  const { 
+    today,
+    loading,
+    isAdding,
+    toggleAdd,
+    remove,
+    toggleDone
+  } = useToday();
 
   return <div css={css`
     display: flex;
@@ -71,16 +78,18 @@ const Today = () => {
               font-size: ${theme.fontSm};
               width: 10%
             `}>{item.timeSpend} mins</span>
-            <button css={css`
-              outline: none;
-              border: none;
-              background: transparent;
-              color: ${theme.text};
-              cursor: pointer;
-              transition: all 0.2s linear;
-              &:hover {
-                color: ${theme.red}
-              }
+            <button
+              onClick={() => remove(item.id)}
+              css={css`
+                outline: none;
+                border: none;
+                background: transparent;
+                color: ${theme.text};
+                cursor: pointer;
+                transition: all 0.2s linear;
+                &:hover {
+                  color: ${theme.red}
+                }
             `}>
               <AiOutlineDelete size={20} stroke="currentColor"/>
             </button>
