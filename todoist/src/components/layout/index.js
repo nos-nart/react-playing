@@ -4,7 +4,7 @@ import { Header } from './Header/index';
 import { SideBar } from './SideBar';
 import { mq } from '../../styles/theme';
 import { useTheme } from 'emotion-theming';
-import { TodayProvider } from '../../hooks/use-today';
+import { TodoProvider } from '../../hooks/use-today';
 
 export const AppLayout = ({ children }) => {
   const theme = useTheme();
@@ -19,7 +19,7 @@ export const AppLayout = ({ children }) => {
     <Header />
     <div css={content}>
       <SideBar />
-      <TodayProvider>
+      <TodoProvider>
         <div css={{
           marginLeft: '266px',
           minHeight: '100vh',
@@ -36,7 +36,7 @@ export const AppLayout = ({ children }) => {
             { children }
           </div>
         </div>
-      </TodayProvider>
+      </TodoProvider>
     </div>
   </>
 };

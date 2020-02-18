@@ -3,7 +3,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import dayjs from 'dayjs';
 import { useTheme } from 'emotion-theming';
-import { useToday } from '../hooks/use-today';
+import { useTodo } from '../hooks/use-today';
 
 const placeholders = [
   'eg. Family lunch on Sunday 11 am #Personal',
@@ -16,7 +16,7 @@ const randomPlaceholder = arr => arr[Math.floor(Math.random() * arr.length)];
 
 function AddToday() {
   const theme = useTheme();
-  const { toggleAdd, add } = useToday();
+  const { toggleAdd, add } = useTodo();
   const { handleSubmit, register, errors, reset } = useForm();
 
   const onSubmit = (data, e) => {

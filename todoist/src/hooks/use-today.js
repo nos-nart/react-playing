@@ -2,9 +2,9 @@ import React, { useState, useEffect, createContext, useContext } from 'react';
 import { firebase } from '../firebase';
 import dayjs from 'dayjs';
 
-export const TodayContext = createContext({});
+export const TodoContext = createContext({});
 
-export const TodayProvider = ({ children }) => {
+export const TodoProvider = ({ children }) => {
   const [today, setToday] = useState([]);
   const [outDate, setOutDate] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -65,7 +65,7 @@ export const TodayProvider = ({ children }) => {
   };
 
   return (
-    <TodayContext.Provider
+    <TodoContext.Provider
       value={{
         today,
         isAdding,
@@ -77,8 +77,8 @@ export const TodayProvider = ({ children }) => {
       }}
     >
       {children}
-    </TodayContext.Provider>
+    </TodoContext.Provider>
   );
 };
 
-export const useToday = () => useContext(TodayContext);
+export const useTodo = () => useContext(TodoContext);

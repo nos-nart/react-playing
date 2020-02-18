@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import { IoMdAddCircle } from 'react-icons/io';
 import { FiInbox } from 'react-icons/fi';
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
-import { useToday } from '../hooks/use-today';
+import { useTodo } from '../hooks/use-today';
 import Loader from '../components/loader';
 import AddToday from '../components/add-today';
 import Overdue from '../components/overdue';
@@ -19,7 +19,7 @@ const Today = () => {
     toggleAdd,
     remove,
     toggleDone
-  } = useToday();
+  } = useTodo();
 
   return (
     <div
@@ -126,7 +126,7 @@ const Today = () => {
                     align-items: center;
                     justify-content: space-between;
                     margin: 0.2rem 0;
-                    padding: 0.8rem 0;
+                    padding: 0.6rem 0;
                     transition: all 0.1s linear;
                     cursor: pointer;
                   `}
