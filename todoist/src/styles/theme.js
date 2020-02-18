@@ -10,12 +10,13 @@ const commonStyle = {
   fwSemiBold: '600',
   fwBold: '700',
   fwExtraBold: '800',
+  muted: '#777',
   green: '#25b84c',
   red: '#f5222d',
   purple: '#722ed1',
   yellow: '#fadb14',
   orange: '#FF7200'
-}
+};
 
 export const day = {
   text: '#333',
