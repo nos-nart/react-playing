@@ -5,7 +5,7 @@ import { useTodo } from '../hooks/use-today';
 import Loader from './loader';
 import AddToday from './add-today';
 import dayjs from 'dayjs';
-import { IoMdAddCircle } from 'react-icons/io';
+import { IoMdAddCircle, IoIosCheckmarkCircle } from 'react-icons/io';
 import { FiInbox } from 'react-icons/fi';
 import { FiEdit3, FiTrash2 } from 'react-icons/fi';
 
@@ -115,12 +115,12 @@ const TodayTasks = () => {
                     align-items: center;
                   `}
                 >
-                  <input
+                  <IoIosCheckmarkCircle
+                    size={24}
+                    onClick={() => toggleDone(item.id)}
                     css={css`
-                      margin: 0;
+                      fill: ${item.isDone ? '#25b84c' : '#92929226'};
                     `}
-                    type="checkbox"
-                    defaultChecked={item.isDone}
                   />
                   <span
                     css={css`
@@ -195,7 +195,7 @@ const TodayTasks = () => {
               }
             `}
           >
-            <IoMdAddCircle size={20} />
+            <IoMdAddCircle size={24} />
             <span
               css={css`
                 margin-left: 10px;

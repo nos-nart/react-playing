@@ -9,7 +9,7 @@ export const TodoProvider = ({ children }) => {
   const [overdue, setOverdue] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
-  const t = dayjs().format('ddd DD');
+  const _today = dayjs().format('ddd DD');
 
   const toggleAdd = () => setIsAdding(!isAdding);
 
@@ -25,10 +25,8 @@ export const TodoProvider = ({ children }) => {
     const unsubscribe = firebase
       .firestore()
       .collection('today')
-      .where('state', '==', 'CA')
+      .where('at', '==', _today)
       .onSnapshot(function(querySnapshot) {
-        debugger;
-        console.log('TCL: TodoProvider -> querySnapshot', querySnapshot);
         const temp = querySnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
