@@ -61,7 +61,8 @@ function AddToday() {
           css={css`
             width: 3.5rem;
             border: 1px solid #ddd;
-            padding: 0.4rem 1rem;
+            padding: 0.4rem 0.75rem;
+            cursor: pointer;
           `}
           name="at"
           ref={register}
