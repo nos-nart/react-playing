@@ -126,6 +126,7 @@ const TodayTasks = () => {
                     css={css`
                       margin-left: 10px;
                       text-decoration: ${item.isDone ? 'line-through' : 'none'};
+                      flex: 1 1 0%;
                     `}
                   >
                     {item.name}

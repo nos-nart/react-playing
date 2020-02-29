@@ -13,25 +13,16 @@ export const TodoProvider = ({ children }) => {
 
   const toggleAdd = () => setIsAdding(!isAdding);
 
-  // db.collection("cities").where("state", "==", "CA")
-  //   .onSnapshot(function(querySnapshot) {
-  //       var cities = [];
-  //       querySnapshot.forEach(function(doc) {
-  //           cities.push(doc.data().name);
-  //       });
-  //       console.log("Current cities in CA: ", cities.join(", "));
-  //   });
   useEffect(() => {
     const unsubscribe = firebase
       .firestore()
       .collection('today')
-      .where('at', '==', _today)
-      .onSnapshot(function(querySnapshot) {
-        const temp = querySnapshot.docs.map(doc => ({
+      .onSnapshot(snapshot => {
+        const temp = snapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
         }));
-        setToday(temp);
+        setToday(temp.filter(item => Object.is(item.at, _today)));
         setLoading(false);
       });
     return () => unsubscribe();
