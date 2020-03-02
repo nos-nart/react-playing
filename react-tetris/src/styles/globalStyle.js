@@ -3,9 +3,7 @@ import reset from 'styled-reset';
 
 export default createGlobalStyle`
   ${reset}
-  @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
   body {
-    font-family: 'Inconsolata', monospace;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
