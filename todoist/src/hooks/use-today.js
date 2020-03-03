@@ -23,7 +23,7 @@ export const TodoProvider = ({ children }) => {
           ...doc.data()
         }));
         setToday(temp.filter(item => Object.is(item.at, _today)));
-        setOverdue(temp.filter(item => !Object.is(item, _today)));
+        setOverdue(temp.filter(item => !Object.is(item.at, _today)));
         setLoading(false);
       });
     return () => unsubscribe();
