@@ -3,10 +3,10 @@ import GlobalStyle from './styles/globalStyle'
 import Layout from './components/layout/index'
 import GameBoard from './components/gameboard/index'
 import ScoreBoard from './components/scoreboard/index'
-import {generateSize} from './helpers/size'
+import {createStage} from './helpers/createStage'
 
 function App() {
-  const size = generateSize();
+  const size = createStage();
 
   return <React.Fragment>
     <GlobalStyle/>
