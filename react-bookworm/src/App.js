@@ -1,33 +1,40 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AuthLayout from './components/AuthLayout';
-import CustomLayout from './components/CustomLayout'
+import AuthLayout from './components/Layout/Login';
+import PrivateLayout from './components/Layout/Private'
 import './App.css';
+
+import * as ROUTES from './constants/routes';
 
 import Login from './routes/Login';
 import Home from './routes/Home';
+import PageNotFound from './routes/PageNotFound';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <RouterWrapper path="/" exact={true} component={Home} layout={CustomLayout}/>
-        <RouterWrapper path="/login" exact={false} component={Login} layout={AuthLayout}/>
+        <Route path={ROUTES.LOGIN} render={props => 
+          <LoginLayout {...props}>
+            <Login {...props} />
+          </LoginLayout>
+        } />
+
+        <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>
   );
 }
 
-function RouterWrapper({
+function PrivateRouter({
   component: Component,
-  layout: Layout,
   ...rest
 }) {
-  return <Route {...rest}
-    render={(props) => <Layout {...props}>
+  return <Route {...rest} render={(props) => 
+    <PrivateLayout {...props}>
       <Component {...props}/>
-    </Layout>}
-  />
+    </PrivateLayout>
+  }/>
 }
 
 export default App;

@@ -6,7 +6,7 @@ import { ReactComponent as Logo } from '../assets/images/book.svg';
 
 const { Header } = Layout;
 
-export default function CustomLayout() {
+export default function PrivateLayout() {
   return <Header css={css`
     background: #fff;
     box-shadow: 0 2px 8px #f0f1f2;
