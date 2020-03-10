@@ -15,11 +15,10 @@ function App() {
     <Router>
       <Switch>
         <Route path={ROUTES.LOGIN} render={props => 
-          <LoginLayout {...props}>
+          <AuthLayout {...props}>
             <Login {...props} />
-          </LoginLayout>
+          </AuthLayout>
         } />
-
         <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>
@@ -30,7 +29,7 @@ function PrivateRouter({
   component: Component,
   ...rest
 }) {
-  return <Route {...rest} render={(props) => 
+  return <Route {...rest} render={(props) =>
     <PrivateLayout {...props}>
       <Component {...props}/>
     </PrivateLayout>

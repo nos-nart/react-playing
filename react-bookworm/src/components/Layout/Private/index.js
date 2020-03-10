@@ -2,7 +2,7 @@ import React from 'react'
 /** @jsx jsx */ import { jsx, css } from '@emotion/core';
 import { Layout } from 'antd';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../assets/images/book.svg';
+import { ReactComponent as Logo } from '../../../assets/images/book.svg';
 
 const { Header } = Layout;
 
