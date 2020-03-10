@@ -32,6 +32,20 @@ export default function PageNotFound() {
           background: theme.page_bg
         }}
       >
+        <span
+          css={css`
+            font-size: 2rem;
+          `}
+        >
+          404
+        </span>
+        <span
+          css={css`
+            margin: 1rem 0;
+          `}
+        >
+          Looks like page doesn't exist
+        </span>
         <NotFound />
         <div
           css={{
