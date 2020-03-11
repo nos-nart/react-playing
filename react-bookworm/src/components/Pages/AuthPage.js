@@ -7,8 +7,8 @@ export default function AuthPage({ routes, children }) {
   return (
     <div css={css`
       border-radius: 3px;
-      width: 20rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      width: 25rem;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
       display: flex;
       flex-direction: column;
       margin-left: 4rem;

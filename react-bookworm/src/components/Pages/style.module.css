@@ -1,5 +1,5 @@
 .active {
-  background: #fafafa;
+  background: #fff;
   color: rgba(0, 0, 0, .87);
 }
 
@@ -10,4 +10,5 @@
   color: #2d3748;
   width: 50%;
   padding: 0.75rem 0;
+  font-weight: 600;
 }

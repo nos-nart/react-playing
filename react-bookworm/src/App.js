@@ -7,6 +7,7 @@ import './App.css';
 import * as ROUTES from './constants/routes';
 
 import Login from './routes/Login';
+import Register from './routes/Register';
 import Home from './routes/Home';
 import PageNotFound from './routes/PageNotFound';
 
@@ -18,7 +19,12 @@ function App() {
           <AuthLayout {...props}>
             <Login {...props} />
           </AuthLayout>
-        } />
+        }/>
+        <Route path={ROUTES.REGISTER} render={props => 
+          <AuthLayout {...props}>
+            <Register {...props} />
+          </AuthLayout>
+        }/>
         <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>

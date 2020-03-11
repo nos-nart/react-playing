@@ -22,7 +22,7 @@ export default function AuthLayout({children}) {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #e2e8f0;
+    background: #fff;
   `}>
     <div css={css`
       display: flex;

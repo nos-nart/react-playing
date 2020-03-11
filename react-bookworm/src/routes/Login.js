@@ -10,14 +10,11 @@ export default function Login() {
 
   return <div css={css`
     flex-grow: 1;
-    padding: 1rem;
+    padding: 3rem 1rem;
     background: #fff;
   `}>
     <Form
       name="login"
-      initialValues={{
-        remember: true,
-      }}
       onFinish={onFinish}
     >
     <Form.Item
