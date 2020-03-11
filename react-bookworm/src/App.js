@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AuthLayout from './components/Layout/Login';
+import AuthLayout from './components/Layout/AuthLayout';
 import PrivateLayout from './components/Layout/Private'
 import './App.css';
 
