@@ -3,7 +3,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import { useTheme } from 'emotion-theming';
 import usePortal from '../hooks/use-portal';
-import { ReactComponent as NotFound } from '../assets/images/404.svg';
+// import { ReactComponent as NotFound } from '../assets/images/404.svg';
 import { Link } from 'react-router-dom';
 
 const Portal = ({ id, children }) => {
@@ -46,7 +46,7 @@ export default function PageNotFound() {
         >
           Looks like page doesn't exist
         </span>
-        <NotFound />
+        {/*<NotFound />*/}
         <div
           css={{
             display: 'flex',
