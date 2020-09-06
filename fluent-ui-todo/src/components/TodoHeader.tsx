@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import { actions } from '../actions';
 
 interface ITodoHeaderProps {
-  addTodo: (label: string) => void;
+  addTodo: (label: string | undefined) => void;
   setFilter: (filter: FilterTypes) => void;
 }
 
 interface ITodoHeaderState {
-  labelInput: string;
+  labelInput: string | undefined;
 }
 
 class TodoHeader extends React.Component<ITodoHeaderProps, ITodoHeaderState> {
@@ -23,7 +23,9 @@ class TodoHeader extends React.Component<ITodoHeaderProps, ITodoHeaderState> {
     return (
       <Stack gap={10}>
         <Stack horizontal horizontalAlign="center">
-          <Text variant="xxLarge">Todos <Text variant="mediumPlus">🥤</Text></Text>
+          <Text variant="xxLarge">Todos
+            <span role="img" aria-label="coca">🥤</span>
+          </Text>
         </Stack>
         <Stack horizontal gap={10}>
           <Stack.Item grow>
@@ -56,12 +58,12 @@ class TodoHeader extends React.Component<ITodoHeaderProps, ITodoHeaderState> {
     this.setState({ labelInput: '' });
   };
 
-  private onChange = (evt: React.FormEvent<HTMLInputElement>, newValue: string) => {
+  private onChange = (evt: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue: string | undefined) => {
     this.setState({ labelInput: newValue });
   };
 
-  private onFilter = (item: PivotItem) => {
-    this.props.setFilter(item.props.headerText as FilterTypes);
+  private onFilter = (item: PivotItem | undefined) => {
+    // this.props.setFilter(item.props.headerText as FilterTypes);
   };
 }
 
