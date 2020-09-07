@@ -22,7 +22,7 @@ class TodoItem extends React.Component<ITodoItemProps, ITodoItemState> {
     super(props);
     this.state = { editing: false, editLabel: '' };
   }
-
+  
   render() {
     const { id, todos, complete, remove } = this.props;
 

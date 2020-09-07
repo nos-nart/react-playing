@@ -1,13 +1,16 @@
 import React from 'react'
-import { Stack } from '@fluentui/react'
+import { Stack, IStackTokens } from '@fluentui/react'
 import { connect } from 'react-redux'
 import { IStore } from '../store'
 import { TodoItem } from './TodoItem'
+import { initializeIcons } from '@fluentui/react';
 
 interface ITodoListProps {
   todos: IStore['todos'];
   filter: IStore['filter'];
 }
+
+const todoListStackTokens: IStackTokens = { childrenGap: 10 }
 
 const TodoList = (props: ITodoListProps) => {
   const { filter, todos } = props;
@@ -16,8 +19,10 @@ const TodoList = (props: ITodoListProps) => {
       (filter === 'completed' && todos[id].completed) ||
       (filter === 'active' && !todos[id].completed);
   });
+
+  initializeIcons();
   return (
-    <Stack gap={10}>
+    <Stack tokens={todoListStackTokens}>
       {filteredTodos.map(id => (
         <TodoItem key={id} id={id} />
       ))}

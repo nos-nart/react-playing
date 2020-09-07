@@ -1,17 +1,19 @@
 import React from 'react'
 import { FilterTypes } from '../store';
-import { Stack, Text, TextField, PrimaryButton, Pivot, PivotItem } from '@fluentui/react';
+import { Stack, Text, TextField, PrimaryButton, Pivot, PivotItem, IStackTokens } from '@fluentui/react';
 import { connect } from 'react-redux';
 import { actions } from '../actions';
 
 interface ITodoHeaderProps {
-  addTodo: (label: string | undefined) => void;
+  addTodo: (label: string) => void;
   setFilter: (filter: FilterTypes) => void;
 }
 
 interface ITodoHeaderState {
-  labelInput: string | undefined;
+  labelInput: string;
 }
+
+const todoHeaderStackTokens: IStackTokens = { childrenGap: 10 }
 
 class TodoHeader extends React.Component<ITodoHeaderProps, ITodoHeaderState> {
   constructor(props: ITodoHeaderProps) {
@@ -21,13 +23,13 @@ class TodoHeader extends React.Component<ITodoHeaderProps, ITodoHeaderState> {
 
   render() {
     return (
-      <Stack gap={10}>
+      <Stack tokens={todoHeaderStackTokens}>
         <Stack horizontal horizontalAlign="center">
           <Text variant="xxLarge">Todos
             <span role="img" aria-label="coca">🥤</span>
           </Text>
         </Stack>
-        <Stack horizontal gap={10}>
+        <Stack horizontal tokens={todoHeaderStackTokens}>
           <Stack.Item grow>
             <TextField
               placeholder="What needs to be done?"
@@ -58,19 +60,19 @@ class TodoHeader extends React.Component<ITodoHeaderProps, ITodoHeaderState> {
     this.setState({ labelInput: '' });
   };
 
-  private onChange = (evt: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue: string | undefined) => {
+  private onChange = (evt: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue: string) => {
     this.setState({ labelInput: newValue });
   };
 
   private onFilter = (item: PivotItem | undefined) => {
-    // this.props.setFilter(item.props.headerText as FilterTypes);
+    this.props.setFilter(item.props.headerText as FilterTypes);
   };
 }
 
 const ConnectedTodoHeader = connect(
   state => ({}),
   dispatch => ({
-    addTodo: (label: any) => dispatch(actions.addTodo(label)),
+    addTodo: (label: string) => dispatch(actions.addTodo(label)),
     setFilter: (filter: string) => dispatch(actions.setFilter(filter))
   })
 )(TodoHeader);
