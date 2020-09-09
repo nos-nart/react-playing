@@ -3,7 +3,6 @@ import { Stack, IStackTokens } from '@fluentui/react'
 import { connect } from 'react-redux'
 import { IStore } from '../store'
 import { TodoItem } from './TodoItem'
-import { initializeIcons } from '@fluentui/react';
 
 interface ITodoListProps {
   todos: IStore['todos'];
@@ -20,7 +19,6 @@ const TodoList = (props: ITodoListProps) => {
       (filter === 'active' && !todos[id].completed);
   });
 
-  initializeIcons();
   return (
     <Stack tokens={todoListStackTokens}>
       {filteredTodos.map(id => (

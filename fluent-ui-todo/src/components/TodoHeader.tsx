@@ -25,8 +25,8 @@ class TodoHeader extends React.Component<ITodoHeaderProps, ITodoHeaderState> {
     return (
       <Stack tokens={todoHeaderStackTokens}>
         <Stack horizontal horizontalAlign="center">
-          <Text variant="xxLarge">Todos
-            <span role="img" aria-label="coca">🥤</span>
+          <Text variant="xLarge">Redux toolkit + Fluent UI
+            <span role="img" aria-label="sparkle">🔮</span>
           </Text>
         </Stack>
         <Stack horizontal tokens={todoHeaderStackTokens}>
@@ -60,12 +60,12 @@ class TodoHeader extends React.Component<ITodoHeaderProps, ITodoHeaderState> {
     this.setState({ labelInput: '' });
   };
 
-  private onChange = (evt: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue: string) => {
-    this.setState({ labelInput: newValue });
+  private onChange = (evt: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => {
+    this.setState({ labelInput: newValue! });
   };
 
-  private onFilter = (item: PivotItem | undefined) => {
-    this.props.setFilter(item.props.headerText as FilterTypes);
+  private onFilter = (item?: PivotItem) => {
+    this.props.setFilter(item?.props.headerText as FilterTypes);
   };
 }
 

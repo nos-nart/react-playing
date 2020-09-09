@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, IStackTokens, IStackStyles } from '@fluentui/react';
+import { Stack, IStackTokens } from '@fluentui/react';
 import { TodoHeader } from './TodoHeader';
 import { TodoList } from './TodoList';
 import { TodoFooter } from './TodoFooter';
