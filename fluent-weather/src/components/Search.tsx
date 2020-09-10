@@ -4,8 +4,7 @@ import {
   Dropdown,
   mergeStyles,
   ComponentSlotStyle,
-  Text,
-  DropdownProps
+  Image,
 } from '@fluentui/react-northstar'
 
 const inputItems = [
@@ -52,7 +51,9 @@ export const Search: FunctionComponent<any> = () => {
         />
         </Flex.Item>
       <Flex.Item grow>
-        <Text content="Current weather"/>
+        <Flex.Item align="center">
+          <Image src="" />
+        </Flex.Item>
       </Flex.Item>
     </Flex>
   )
