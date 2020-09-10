@@ -1,14 +1,16 @@
 import React from 'react';
-import { SearchBar } from './components/SearchBar';
-import { Flex } from '@fluentui/react-northstar';
+import { Flex } from '@fluentui/react-northstar'
+import { Search } from './components/Search'
 
 function App() {
   return (
-    <Flex gap="gap.medium" padding="padding.medium">
+    <Flex>
       <Flex.Item>
-        <SearchBar />
+        <Search/>
       </Flex.Item>
-      <Flex.Item grow></Flex.Item>
+      <Flex.Item grow styles={{ background: '#100E1D' }}>
+        <span>display weather within a week</span>
+      </Flex.Item>
     </Flex>
   );
 }
